@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Carl's Birthday Wishlist</title>
+
   <style>
     :root {
       --bg: #f7f5ef;
@@ -14,95 +15,388 @@
       --line: #e8e2d6;
       --soft: #ede7dc;
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
     }
-    .page { width: min(880px, 92vw); margin: 0 auto; padding: 56px 0 80px; }
-    header { text-align: center; padding: 28px 0 34px; }
-    .kicker { color: var(--muted); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; margin-bottom: 18px; }
-    h1 { margin: 0; font-size: clamp(42px, 8vw, 78px); line-height: 0.95; letter-spacing: -0.06em; font-weight: 850; }
-    .intro { max-width: 620px; margin: 22px auto 0; color: var(--muted); font-size: 18px; line-height: 1.65; }
-    .countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 34px auto 46px; max-width: 620px; }
-    .timebox { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 20px 12px; text-align: center; box-shadow: 0 12px 40px rgba(17, 24, 39, 0.04); }
-    .num { font-size: clamp(30px, 6vw, 54px); line-height: 1; font-weight: 850; letter-spacing: -0.05em; }
-    .label { margin-top: 8px; color: var(--muted); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 750; }
-    .section { margin-top: 34px; }
-    .section-title { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 14px; }
-    h2 { margin: 0; font-size: 24px; letter-spacing: -0.03em; }
-    .hint { margin: 0; color: var(--muted); font-size: 14px; }
-    .list { display: grid; gap: 12px; }
-    .gift { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 18px 20px; display: grid; gap: 8px; box-shadow: 0 12px 40px rgba(17, 24, 39, 0.035); }
-    .gift-top { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
-    .gift-name { font-size: 18px; font-weight: 760; letter-spacing: -0.015em; }
-    .price { color: var(--muted); font-weight: 700; white-space: nowrap; }
-    .why { color: var(--muted); line-height: 1.5; font-size: 15px; }
-    a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
-    a:hover { color: var(--muted); }
-    .note { margin-top: 38px; background: var(--soft); border: 1px solid var(--line); border-radius: 24px; padding: 22px; color: #3f3f46; line-height: 1.6; text-align: center; }
-    footer { margin-top: 34px; text-align: center; color: var(--muted); font-size: 13px; }
+
+    .page {
+      width: min(880px, 92vw);
+      margin: 0 auto;
+      padding: 56px 0 80px;
+    }
+
+    header {
+      text-align: center;
+      padding: 28px 0 34px;
+    }
+
+    .kicker {
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 8vw, 78px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      font-weight: 850;
+    }
+
+    .intro {
+      max-width: 620px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 34px auto 46px;
+      max-width: 620px;
+    }
+
+    .timebox {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px 12px;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(17, 24, 39, 0.04);
+    }
+
+    .num {
+      font-size: clamp(30px, 6vw, 54px);
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: -0.05em;
+    }
+
+    .label {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 750;
+    }
+
+    .section {
+      margin-top: 34px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: -0.03em;
+    }
+
+    .hint {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .gift {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px 20px;
+      display: grid;
+      gap: 8px;
+      box-shadow: 0 12px 40px rgba(17, 24, 39, 0.035);
+    }
+
+    .gift-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .gift-name {
+      font-size: 18px;
+      font-weight: 760;
+      letter-spacing: -0.015em;
+    }
+
+    .price {
+      color: var(--muted);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .why {
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 15px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+    a:hover {
+      color: var(--muted);
+    }
+
+    .note {
+      margin-top: 38px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      color: #3f3f46;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 34px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
     @media (max-width: 650px) {
-      .page { padding-top: 34px; }
-      .countdown { grid-template-columns: repeat(2, 1fr); }
-      .section-title { display: block; }
-      .hint { margin-top: 6px; }
-      .gift-top { display: block; }
-      .price { display: block; margin-top: 4px; }
+      .page {
+        padding-top: 34px;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-title {
+        display: block;
+      }
+
+      .hint {
+        margin-top: 6px;
+      }
+
+      .gift-top {
+        display: block;
+      }
+
+      .price {
+        display: block;
+        margin-top: 4px;
+      }
     }
   </style>
 </head>
+
 <body>
   <main class="page">
     <header>
       <div class="kicker">Birthday Wishlist</div>
       <h1>Carl turns 17</h1>
-      <p class="intro">A clean, slightly strategic wishlist for anyone looking for ideas. No pressure, just options.</p>
+      <p class="intro">
+        Here are a few birthday ideas, grouped from most wanted to extra options. No pressure, but I figured links and prices would make things easier.
+      </p>
     </header>
 
     <section class="countdown" aria-label="Countdown to birthday">
-      <div class="timebox"><div class="num" id="days">--</div><div class="label">Days</div></div>
-      <div class="timebox"><div class="num" id="hours">--</div><div class="label">Hours</div></div>
-      <div class="timebox"><div class="num" id="mins">--</div><div class="label">Minutes</div></div>
-      <div class="timebox"><div class="num" id="secs">--</div><div class="label">Seconds</div></div>
-    </section>
+      <div class="timebox">
+        <div class="num" id="days">--</div>
+        <div class="label">Days</div>
+      </div>
 
-    <section class="section">
-      <div class="section-title"><h2>Most wanted</h2><p class="hint">The main ideas</p></div>
-      <div class="list">
-        <article class="gift"><div class="gift-top"><div class="gift-name"><a href="PASTE_LINK_HERE" target="_blank">Gift name #1</a></div><div class="price">PRICE</div></div><div class="why">Short reason why this would be useful or nice.</div></article>
-        <article class="gift"><div class="gift-top"><div class="gift-name"><a href="PASTE_LINK_HERE" target="_blank">Gift name #2</a></div><div class="price">PRICE</div></div><div class="why">Short reason why this would be useful or nice.</div></article>
-        <article class="gift"><div class="gift-top"><div class="gift-name"><a href="PASTE_LINK_HERE" target="_blank">Gift name #3</a></div><div class="price">PRICE</div></div><div class="why">Short reason why this would be useful or nice.</div></article>
+      <div class="timebox">
+        <div class="num" id="hours">--</div>
+        <div class="label">Hours</div>
+      </div>
+
+      <div class="timebox">
+        <div class="num" id="mins">--</div>
+        <div class="label">Minutes</div>
+      </div>
+
+      <div class="timebox">
+        <div class="num" id="secs">--</div>
+        <div class="label">Seconds</div>
       </div>
     </section>
 
     <section class="section">
-      <div class="section-title"><h2>Other good ideas</h2><p class="hint">Still very acceptable</p></div>
+      <div class="section-title">
+        <h2>Most wanted</h2>
+        <p class="hint">Flight sim upgrades</p>
+      </div>
+
       <div class="list">
-        <article class="gift"><div class="gift-top"><div class="gift-name"><a href="PASTE_LINK_HERE" target="_blank">Gift name #4</a></div><div class="price">PRICE</div></div><div class="why">Short reason why this is a good idea.</div></article>
-        <article class="gift"><div class="gift-top"><div class="gift-name"><a href="PASTE_LINK_HERE" target="_blank">Gift name #5</a></div><div class="price">PRICE</div></div><div class="why">Short reason why this is a good idea.</div></article>
+        <article class="gift">
+          <div class="gift-top">
+            <div class="gift-name">
+              <a href="https://winctrl.com/view/goods-details.html?id=1665" target="_blank" rel="noopener noreferrer">
+                Airbus Throttle, Flap/Spoiler, Engine, and Gear Control Panel
+              </a>
+            </div>
+            <div class="price">$242</div>
+          </div>
+          <div class="why">
+            My top choice out of the flight simulator upgrades because it would add the biggest hands-on cockpit feel.
+          </div>
+        </article>
+
+        <article class="gift">
+          <div class="gift-top">
+            <div class="gift-name">
+              <a href="https://winctrl.com/view/goods-details.html?id=925" target="_blank" rel="noopener noreferrer">
+                Airbus FCU
+              </a>
+            </div>
+            <div class="price">$287</div>
+          </div>
+          <div class="why">
+            A major flight simulator realism upgrade and a pretty good way to keep me focused on aviation instead of random shooter games.
+          </div>
+        </article>
+
+        <article class="gift">
+          <div class="gift-top">
+            <div class="gift-name">
+              <a href="https://winctrl.com/view/goods-details.html?id=945" target="_blank" rel="noopener noreferrer">
+                Airbus MCDU
+              </a>
+            </div>
+            <div class="price">$120</div>
+          </div>
+          <div class="why">
+            A great addition to my flight simulator that would make the cockpit setup feel much more realistic.
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="note">If none of these feel right, cash or a surprise is also fully accepted and appreciated.</section>
-    <footer>Made with an unreasonable amount of effort for a birthday wishlist.</footer>
+    <section class="section">
+      <div class="section-title">
+        <h2>Other good ideas</h2>
+        <p class="hint">Aviation, space, and practical stuff</p>
+      </div>
+
+      <div class="list">
+        <article class="gift">
+          <div class="gift-top">
+            <div class="gift-name">
+              <a href="https://www.leatherology.com/products/bifold-wallet-with-flap-black-onyx?utm_source=google&utm_medium=cpc&utm_campaign=%7Bcampaign%7D&utm_id=21366909813&utm_adgroup=%7Badgroup%7D&utm_content=%7Badgroup%7D&utm_term=&tw_source=google&tw_adid=702135742241&tw_campaign=21366909813&tw_kwdid=pla-2381192857861&gad_source=1&gad_campaignid=21366909813&gbraid=0AAAAAD3DqqWDqtd4ir8-X-CGjuFbKn53T&gclid=CjwKCAjwj7HTBhBiEiwA8s35OlO5WtMUCGq9uHzBRJF5n1DzWgyGSZPhfZv3Fe6Z27iLjEjDY52w_RoCA20QAvD_BwE&variant=45656427856120" target="_blank" rel="noopener noreferrer">
+                Leatherology Bifold Wallet with Flap, Black Onyx
+              </a>
+            </div>
+            <div class="price">$115</div>
+          </div>
+          <div class="why">
+            My current wallet is damaging my cards, so this would be a practical daily upgrade. Black version please.
+          </div>
+        </article>
+
+        <article class="gift">
+          <div class="gift-top">
+            <div class="gift-name">
+              <a href="https://www.etsy.com/listing/4523414947/cfm56-7b-turbofan-jet-engine-blueprint?ls=s&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=ge+engine+poster&ref=sr_gallery-1-1&sr_prefetch=1&pf_from=search&pro=1&local_signal_search=1&content_source=a609139a-a887-4c05-a3f9-390733c8203d%253ALT9740431385984f1abaaf8265a60b0693dd8e0e53&organic_search_click=1&logging_key=a609139a-a887-4c05-a3f9-390733c8203d%3ALT9740431385984f1abaaf8265a60b0693dd8e0e53" target="_blank" rel="noopener noreferrer">
+                CFM Engine Poster
+              </a>
+            </div>
+            <div class="price">$50</div>
+          </div>
+          <div class="why">
+            A clean room decoration that fits my aerospace interests and engine obsession perfectly.
+          </div>
+        </article>
+
+        <article class="gift">
+          <div class="gift-top">
+            <div class="gift-name">
+              <a href="https://www.etsy.com/listing/4537503402/international-space-station-vintage?ls=s&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=International+space+station+poster&ref=sr_gallery-1-1&sr_prefetch=1&pf_from=search&frs=1&content_source=cb90690a-b12b-4f6a-a347-f97f6bc1ac6e%253ALT63cd9aa065f0b74b2029696a4a9aff077b824808&organic_search_click=1&logging_key=cb90690a-b12b-4f6a-a347-f97f6bc1ac6e%3ALT63cd9aa065f0b74b2029696a4a9aff077b824808" target="_blank" rel="noopener noreferrer">
+                ISS Poster
+              </a>
+            </div>
+            <div class="price">$20</div>
+          </div>
+          <div class="why">
+            I love space, and after watching how the ISS was built, this would be a cool reminder of that engineering.
+          </div>
+        </article>
+
+        <article class="gift">
+          <div class="gift-top">
+            <div class="gift-name">
+              <a href="https://www.etq-amsterdam.com/products/lt-03-premium-nappa-white?variant=41288057028793&utm_source=google&utm_medium=cpc&utm_campaign={campaignname}&utm_content={adgroupname}_664169868704&utm_term=&utm_device=c&utm_network=g&tw_source=google&tw_adid=664169868704&tw_campaign=20318673084&gad_source=1&gad_campaignid=20318673084&gbraid=0AAAAADkrPkGKIcGSbCKIKZtzeU_c_6bBi&gclid=CjwKCAjwj7HTBhBiEiwA8s35OunHbrxL-sAxW-sP6FhmVixm6BD04FDsHwItMVp2RVNbltHaeEWVQBoCtVMQAvD_BwE" target="_blank" rel="noopener noreferrer">
+                White ETQ Sneakers
+              </a>
+            </div>
+            <div class="price">$189</div>
+          </div>
+          <div class="why">
+            A practical everyday upgrade since I need a clean white pair of shoes I can wear often.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="note">
+      If none of these feel right, cash or a surprise is also fully accepted and appreciated.
+    </section>
+
+    <footer>
+      Made with an unreasonable amount of effort for a birthday wishlist.
+    </footer>
   </main>
 
   <script>
     const birthday = new Date("2026-08-11T00:00:00").getTime();
     const ids = ["days", "hours", "mins", "secs"];
+
     function updateCountdown() {
       let diff = Math.max(0, birthday - Date.now());
-      const days = Math.floor(diff / 86400000); diff -= days * 86400000;
-      const hours = Math.floor(diff / 3600000); diff -= hours * 3600000;
-      const mins = Math.floor(diff / 60000); diff -= mins * 60000;
+
+      const days = Math.floor(diff / 86400000);
+      diff -= days * 86400000;
+
+      const hours = Math.floor(diff / 3600000);
+      diff -= hours * 3600000;
+
+      const mins = Math.floor(diff / 60000);
+      diff -= mins * 60000;
+
       const secs = Math.floor(diff / 1000);
+
       [days, hours, mins, secs].forEach((value, index) => {
         document.getElementById(ids[index]).textContent = String(value).padStart(2, "0");
       });
     }
+
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
